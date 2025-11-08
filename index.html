@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Simples</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilo para que o texto do visor não quebre */
+    #display {
+      word-wrap: break-word;
+      word-break: break-all;
+      white-space: normal;
+    }
+    /* Estilo para o botão de igual */
+    .btn-equal {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+
+  <div class="calculator-container bg-white shadow-2xl rounded-xl w-full max-w-sm p-6">
+    <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">Calculadora JS</h1>
+
+    <div id="display" 
+         class="bg-gray-800 text-white text-4xl font-light text-right p-4 mb-6 rounded-lg h-20 overflow-hidden">
+      0
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      
+      <button class="btn btn-clear bg-red-500 hover:bg-red-600 text-white font-semibold p-4 rounded-lg shadow-md" data-action="clear">AC</button>
+      <button class="btn btn-operator bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-action="negate">+/-</button>
+      <button class="btn btn-operator bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-operator="%">%</button>
+      <button class="btn btn-operator bg-orange-500 hover:bg-orange-600 text-white font-semibold p-4 rounded-lg shadow-md" data-operator="/">÷</button>
+
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="7">7</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="8">8</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="9">9</button>
+      <button class="btn btn-operator bg-orange-500 hover:bg-orange-600 text-white font-semibold p-4 rounded-lg shadow-md" data-operator="*">x</button>
+
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="4">4</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="5">5</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="6">6</button>
+      <button class="btn btn-operator bg-orange-500 hover:bg-orange-600 text-white font-semibold p-4 rounded-lg shadow-md" data-operator="-">-</button>
+
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="1">1</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="2">2</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="3">3</button>
+      <button class="btn btn-operator bg-orange-500 hover:bg-orange-600 text-white font-semibold p-4 rounded-lg shadow-md" data-operator="+">+</button>
+
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number="0">0</button>
+      <button class="btn btn-number bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold p-4 rounded-lg shadow-md" data-number=".">.</button>
+      <button class="btn btn-equal btn-operator bg-blue-600 hover:bg-blue-700 text-white font-semibold p-4 rounded-lg shadow-md" data-action="calculate">=</button>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
